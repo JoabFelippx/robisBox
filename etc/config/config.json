@@ -1,0 +1,6 @@
+{
+
+    "broker_uri": "amqp://10.10.2.211:30000",
+    "service_name": "RobisFrame",
+    "topic": "Robis.1.Frame"
+}
