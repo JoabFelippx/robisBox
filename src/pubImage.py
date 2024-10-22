@@ -44,7 +44,7 @@ def main():
         robis_msg = Message()
         robis_msg.topic = config['topic']
         robis_msg.pack(msg)
-        channel_robis.publish(msg)	
+        channel_robis.publish(robis_msg)	
         
 if __name__ == "__main__":
     main()
