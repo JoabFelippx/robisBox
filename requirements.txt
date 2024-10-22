@@ -1,0 +1,8 @@
+is-wire
+is-msgs
+
+six
+json
+
+numpy
+opencv-python-headless

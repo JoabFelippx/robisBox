@@ -1,4 +1,4 @@
-from is_wire.core import Logger, Subscription, Message, Tracer, AsyncTransport
+from is_wire.core import Logger, Subscription, Message
 from streamChannel import StreamChannel
 
 import json
@@ -7,7 +7,7 @@ from utils import to_np, to_image, drawBoundingBox, unpack_image, unpack_detecti
 
 def main():
     
-    config = json.load(open('./etc/config/config.json'))
+    config = json.load(open('../etc/config/config.json'))
     
     servie_name = config['service_name']
     broker_uri = config['broker_uri']
