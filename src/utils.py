@@ -40,8 +40,9 @@ def drawBoundingBox(image, objsAnnotations, color=(0, 255, 0), thickness=2):
     
     bbox = objsAnnotations.objects[0].region.vertices
     
-    vertices = [(bbox[0].x, bbox[0].y), (bbox[1].x, bbox[1].y), (bbox[2].x, bbox[2].y), (bbox[3].x, bbox[3].y)]   
-    
-    cv2.polylines(image, [np.array(vertices)], isClosed=True, color=color, thickness=thickness)
+    vertices = np.array([[bbox[0].x, bbox[0].y], [bbox[1].x, bbox[1].y], [bbox[3].x, bbox[3].y], [bbox[2].x, bbox[2].y]],  dtype=np.int32)
+    vertices = vertices.reshape((-1, 1, 2))
 
+    cv2.polylines(image, [vertices], isClosed=True, color=color, thickness=thickness)
+    
     return image
